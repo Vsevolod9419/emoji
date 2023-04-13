@@ -1,6 +1,10 @@
-import { data } from "./emoji.js";
+const emoji_url = 'https://emoji.ymatuhin.workers.dev/'
 
-
+async function fetchData(url) {
+	let res = await fetch(url)
+	return res.json()
+}
+const data = await	fetchData(emoji_url);
 
 
 let newData = []
@@ -58,4 +62,3 @@ function search(e) {
 	container.innerHTML = '';
 	filterEmoji.forEach(emojicard)
 }
-
